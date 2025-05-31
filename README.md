@@ -49,3 +49,4 @@ export default tseslint.config({
 })
 ```
 # blue-website
+# blue-website
