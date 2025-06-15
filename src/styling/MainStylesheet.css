@@ -29,44 +29,6 @@ hr {
   margin: 12.5px 0px;
 }
 
-.nav-menu {
-  position: fixed;
-  top: 0em;
-  padding-top: 2em;
-  padding-left: 1em;
-  left: 0em;
-  bottom: 0em;
-  width: 8em;
-  border-right: 2px solid #CFCFCF;
-}
-
-.nav-item {
-  transition: 150ms;
-  color: #000;
-  opacity: 50%;
-  font-size: 1.1em;
-
-  margin-top: 10px;
-  margin-bottom: 0px;
-  left: 0px;
-  right: 0px;
-
-  padding-right: 5px;
-  padding-bottom: 4px;
-  border: 2px solid #0000;
-  border-radius: 10px;
-
-  &::before {
-    content: "｜";
-  }
-
-  &:hover {
-    opacity: 80%;
-    border: 2px solid #0008;
-    border-radius: 10px;
-  }
-}
-
 .main-content, .crumby-row {
   min-width: 36rem;
   max-width: 72rem;

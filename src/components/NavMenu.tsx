@@ -1,3 +1,4 @@
+import "../styling/NavMenu.css"
 import NavItem from "./NavItem";
 
 interface Props {

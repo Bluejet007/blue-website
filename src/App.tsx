@@ -1,4 +1,4 @@
-import './MainStylesheet.css';
+import './styling/MainStylesheet.css';
 import ArticleGrid from './components/ArticleGrid';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
