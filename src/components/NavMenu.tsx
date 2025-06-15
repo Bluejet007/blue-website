@@ -10,7 +10,7 @@ function NavMenu({navData}: Props) {
     <img src="/webicon.svg" alt="" id="logo"/>
     <h3 className="nav-header">Navigation</h3>
     {navData.map((item, index) => (
-    <NavItem label={item.name} link={item.path} key={index}/>
+      <NavItem label={item.name} link={item.path} key={index}/>
     ))}
   </nav>
   );

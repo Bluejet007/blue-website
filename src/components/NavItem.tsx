@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface Props {
     label?: string;
     link?: string;
@@ -5,7 +7,7 @@ interface Props {
 
 function NavItem({label = "Placeholder text", link}: Props) {
     return <p className="nav-item">
-        {!link || link.length === 0 ? label : <a href={link}>{label}</a>}
+        {!link || link.length === 0 ? label : <Link to={link}>{label}</Link>}
     </p>;
 }
 
