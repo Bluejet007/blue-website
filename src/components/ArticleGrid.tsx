@@ -1,4 +1,4 @@
-import '../ArticleGrid.css';
+import '../styling/ArticleGrid.css';
 import ArticleCard from './ArticleCard';
 import { Article } from '../types'; // Import the Article interface
 
