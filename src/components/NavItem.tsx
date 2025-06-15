@@ -6,9 +6,10 @@ interface Props {
 }
 
 function NavItem({label = "Placeholder text", link}: Props) {
-    return <p className="nav-item">
-        {!link || link.length === 0 ? label : <Link to={link}>{label}</Link>}
-    </p>;
+    if(!link || link.length === 0)
+        return <p className="nav-item">label</p>;
+    else
+        return <Link to={link}><p className="nav-item">{label}</p></Link>;
 }
 
 export default NavItem;
