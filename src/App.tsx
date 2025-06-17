@@ -7,8 +7,12 @@ import CrumbyRow from './components/CrumbyRow';
 import Header from './components/Header';
 import NavMenu from './components/NavMenu';
 import { useState } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 function App() {
+  const queryClient = new QueryClient();
+
   /* Background States */
 
   //Centre dot
@@ -21,7 +25,8 @@ function App() {
   const gridSizeHandler = useState(25);
 
   return (
-  <>
+  <QueryClientProvider client={queryClient}>
+    <ReactQueryDevtools />
     <GridBG isCentre={centreDotHandler[0]} dotSize={dotSizeHandler[0]} gridSize={gridSizeHandler[0]}/>
     {/* <NavMenu navData={navData}/> */}
     <Router>
@@ -36,7 +41,7 @@ function App() {
         </Routes>
       </div>
     </Router>
-  </>
+  </QueryClientProvider>
   );
 }
 

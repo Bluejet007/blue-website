@@ -1,8 +1,8 @@
 export interface Article {
-  id: number;
+  id: string;
   title: string;
-  summary: string;
-  imageUrl: string;
+  description: string;
+  imageUrl?: string;
   link: string; // The path to the individual article page
   content?: string; // Optional: for the full article page content
 }
