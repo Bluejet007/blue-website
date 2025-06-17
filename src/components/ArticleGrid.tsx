@@ -5,8 +5,8 @@ import ArticleAPI from './ArticleAPI';
 function ArticleGrid() {  
   const results = ArticleAPI.useArticles();
 
-  if(results.isLoading) return "Loading..."
-  if(results.error) return "Error: " + results.error.message
+  if(results.isLoading) return "Loading...";
+  if(results.error) return "Error: " + results.error.message;
 
   return (
     <div className="article-grid-container">
@@ -15,6 +15,6 @@ function ArticleGrid() {
       ))}
     </div>
   );
-};
+}
 
 export default ArticleGrid;

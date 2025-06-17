@@ -15,6 +15,6 @@ function ArticleCard({ article }: ArticleCardProps) {
       </Link>
     </div>
   );
-};
+}
 
 export default ArticleCard;
