@@ -1,6 +1,9 @@
 import '../styling/ArticleGrid.css';
 import ArticleCard from './ArticleCard';
 import { Article } from '../types'; // Import the Article interface
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import FetchArticles from './fetchArticles';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 function ArticleGrid() {
   // Sample article data with explicit Article type
@@ -36,12 +39,19 @@ function ArticleGrid() {
     // Add more articles as needed
   ];
 
+  const queryClient = new QueryClient();
+
   return (
     <div className="article-grid-container">
-      {articles.map((article) => (
+      {/* {articles.map((article) => (
         // Pass the entire article object as a prop
         <ArticleCard key={article.id} article={article} />
-      ))}
+      ))} */}
+
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools />
+        <FetchArticles />
+      </QueryClientProvider>
     </div>
   );
 };
