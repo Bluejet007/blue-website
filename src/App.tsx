@@ -2,13 +2,15 @@ import './styling/MainStylesheet.css';
 import ArticleGrid from './components/ArticleGrid';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
-import GridBG from './components/GridBG';
 import CrumbyRow from './components/CrumbyRow';
 import Header from './components/Header';
 import NavMenu from './components/NavMenu';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import React from 'react';
+
+const GridBG = React.lazy(() => import('./components/GridBG'));
 
 function App() {
   const queryClient = new QueryClient();
@@ -27,8 +29,6 @@ function App() {
   return (
   <QueryClientProvider client={queryClient}>
     <ReactQueryDevtools />
-    <GridBG isCentre={centreDotHandler[0]} dotSize={dotSizeHandler[0]} gridSize={gridSizeHandler[0]}/>
-    {/* <NavMenu navData={navData}/> */}
     <Router>
       <div className="page-container">
       <NavMenu navData={[{name: "Test", path: "/"}, {name: "Here", path: "/"}, {name: "There", path: "articles"}]}/>
@@ -41,6 +41,9 @@ function App() {
         </Routes>
       </div>
     </Router>
+    <Suspense>
+      <GridBG isCentre={centreDotHandler[0]} dotSize={dotSizeHandler[0]} gridSize={gridSizeHandler[0]}/>
+    </Suspense>
   </QueryClientProvider>
   );
 }
