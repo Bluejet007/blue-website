@@ -9,6 +9,8 @@ import { Suspense, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import React from 'react';
+import FileUploader from './components/FileUploader';
+import navData from './navData';
 
 const GridBG = React.lazy(() => import('./components/GridBG'));
 
@@ -31,12 +33,13 @@ function App() {
     <ReactQueryDevtools />
     <Router>
       <div className="page-container">
-      <NavMenu navData={[{name: "Test", path: "/"}, {name: "Here", path: "/"}, {name: "There", path: "articles"}]}/>
+      <NavMenu navData={navData}/>
       <Header />
       <CrumbyRow path={["Test", "Here", "There"]}/>
         <Routes>
           <Route path="/" element={<Home centreDotHandler={centreDotHandler} dotSizeHandler={dotSizeHandler} gridSizeHandler={gridSizeHandler}/>} />
           <Route path="articles" element={<ArticleGrid />} />
+          <Route path="upload" element={<FileUploader />} />
           {/* Add other routes as needed */}
         </Routes>
       </div>

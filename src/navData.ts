@@ -1,10 +1,14 @@
 export default [
     {
-        name: "My Text",
-        path: ""
+        name: "Home",
+        path: "/"
     },
     {
-        name: "Item A",
-        path: ""
+        name: "Articles",
+        path: "articles"
+    },
+    {
+        name: "Upload",
+        path: "upload"
     }
 ];
