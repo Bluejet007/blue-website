@@ -1,10 +1,9 @@
-import axios from "axios";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useId, useState } from "react";
+import ImageJobAPI from "./ImageJobAPI";
 
 function FileUploader() {
   const [file, setFile] = useState<File | null>(null);
-  const [status, setStatus] = useState<"idle" | "uploading" | "success" | "error">("idle");
-  const [uploadProgress, setUploadProgress] = useState(0);
+  const {mutate: upload, isPending} = ImageJobAPI.useUpload();
 
   function fileHandler(e: ChangeEvent<HTMLInputElement>) {
     if(e.target.files) {
@@ -12,33 +11,27 @@ function FileUploader() {
     }    
   }
 
-  async function uploadHandler() {
+  function uploadHandler() {
     if(!file) return;
 
-    setStatus("uploading");
-    setUploadProgress(0);
-
     const formData = new FormData();
+    formData.append("id", "wioalknfa");
     formData.append("filter", "kuwa");
     formData.append("file", file);
 
-    try {
-      await axios.post("https://httpbin.org/post", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data"
-        },
-        onUploadProgress: (e) => {
-          const progress = e.total ? Math.round((e.loaded * 100) / e.total) : 0;
-          setUploadProgress(progress);
+    upload(formData, {
+      onSuccess: (response) => {
+        if(response.status == 200) {
+          alert("Success");
         }
-      });
-
-      setStatus("success");
-      setUploadProgress(100);
-    } catch {
-      setStatus("error");
-      setUploadProgress(0);
-    }
+        else {
+          alert("Error");
+        }
+      },
+      onError: () => {
+        alert("Error");
+      }
+    });
   }
 
   return (
@@ -49,8 +42,7 @@ function FileUploader() {
         <p>File name: {file.name}</p>
         <p>Size: {(file.size / 1024).toFixed(2)} KB</p>
         <p>Type: {file.type}</p>
-        {status !== "uploading" && <button onClick={uploadHandler}>Upload</button>}
-        <p>{status} {uploadProgress}%</p>
+        {isPending ? <p>Uploading...</p> : <button onClick={uploadHandler}>Upload</button>}
       </div>
     }
   </div>
