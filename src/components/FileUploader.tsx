@@ -1,4 +1,4 @@
-import { ChangeEvent, useId, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import ImageJobAPI from "./ImageJobAPI";
 
 function FileUploader() {

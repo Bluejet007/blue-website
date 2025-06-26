@@ -4,7 +4,7 @@ const ImageJobAPI = {
   useUpload() {
     return useMutation({
       mutationFn: async (formData: FormData) => {
-        return await fetch("https://httpbin.org/post", {
+        return await fetch("https://rtarticlesapi.azurewebsites.net/api/ImageJob/upload", {
           method: "POST",
           body: formData
         });
