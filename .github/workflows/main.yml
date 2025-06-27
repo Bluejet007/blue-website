@@ -20,9 +20,8 @@ jobs:
         uses: Azure/cli@v2.1.0
         with:
           azcliversion: latest
-          inlineScript: |
-            az storage blob upload-batch -s /dist -d '$web' --account-name store0r --overwrite
+          inlineScript: az storage blob upload-batch -s "dist" -d '$web' --account-name store0r --overwrite true --auth-mode login
 
       - name: Logout of Azure
-        run: |
-          az logout
+        run: az logout
+        if: always()
