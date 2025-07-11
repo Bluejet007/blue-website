@@ -1,9 +1,10 @@
 import { ChangeEvent, useState } from "react";
-import ImageJobAPI from "./ImageJobAPI";
+import JobAPIHandler from "./JobAPIHandler";
 
 function FileUploader() {
   const [file, setFile] = useState<File | null>(null);
-  const {mutate: upload, isPending} = ImageJobAPI.useUpload();
+  const {mutate: upload, isPending: isUploading} = JobAPIHandler.useUpload();
+  const {mutate: download, isPending: isDownloading} = JobAPIHandler.useDownload();
 
   function fileHandler(e: ChangeEvent<HTMLInputElement>) {
     if(e.target.files) {
@@ -11,25 +12,22 @@ function FileUploader() {
     }    
   }
 
-  function uploadHandler() {
+  function UploadHandler() {
     if(!file) return;
 
     const formData = new FormData();
-    formData.append("id", "wioalknfa");
-    formData.append("filter", "kuwa");
+    formData.append("jobType", "0");
     formData.append("file", file);
 
     upload(formData, {
       onSuccess: (response) => {
         if(response.status == 200) {
           alert("Success");
+          download({id: response.json(), fileName: file.name});
         }
         else {
           alert("Error");
         }
-      },
-      onError: () => {
-        alert("Error");
       }
     });
   }
@@ -42,7 +40,7 @@ function FileUploader() {
         <p>File name: {file.name}</p>
         <p>Size: {(file.size / 1024).toFixed(2)} KB</p>
         <p>Type: {file.type}</p>
-        {isPending ? <p>Uploading...</p> : <button onClick={uploadHandler}>Upload</button>}
+        {isUploading ? <p>Uploading...</p> : isDownloading ? <p>Downloading...</p> : <button onClick={UploadHandler}>Upload</button>}
       </div>
     }
   </div>

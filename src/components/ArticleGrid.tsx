@@ -1,6 +1,6 @@
 import '../styling/ArticleGrid.css';
 import ArticleCard from './ArticleCard';
-import ArticleAPI from './ArticleAPI';
+import ArticleAPI from './ArticleAPIHandler';
 
 function ArticleGrid() {  
   const results = ArticleAPI.useArticles();
