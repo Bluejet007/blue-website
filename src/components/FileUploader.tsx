@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from "react";
-import JobAPIHandler from "./JobAPIHandler";
+import JobAPIHandler from "../handlers/JobAPIHandler";
 
 function FileUploader() {
   const [file, setFile] = useState<File | null>(null);
@@ -35,6 +35,9 @@ function FileUploader() {
   return (
   <div className="main-content">
     <input type="file" onChange={fileHandler}/>
+    <select>
+      <option value="0">Greyscale</option> // Not implemented
+    </select>
     {file && 
       <div>
         <p>File name: {file.name}</p>

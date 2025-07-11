@@ -5,7 +5,7 @@ export interface Article {
   imageUrl?: string;
   link: string; // Relative path
   content?: string; // Full article page content
-}
+};
 
 export interface GridProps {
   centreDotHandler: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
