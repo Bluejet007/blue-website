@@ -20,12 +20,12 @@ jobs:
         run: npm install && npm run build
 
       - name: Log in with Azure
-        uses: Azure/login@v2.3.0
+        uses: Azure/login@v2.3
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Upload to Azure Blob Storage
-        uses: Azure/cli@v2.1.0
+        uses: Azure/cli@v2.1
         with:
           azcliversion: latest
           inlineScript: az storage blob upload-batch -s "dist" -d '$web' --account-name store0r --overwrite true --auth-mode login
