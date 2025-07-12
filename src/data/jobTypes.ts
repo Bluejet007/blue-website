@@ -1,7 +1,7 @@
-interface JobParameter {
+export interface JobParameter {
   name: string,
   dataType: string,
-  range?: [number, number]
+  range?: number[]
 };
 
 export default [

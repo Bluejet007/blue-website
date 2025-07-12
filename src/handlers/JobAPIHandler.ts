@@ -14,9 +14,9 @@ const JobAPIHandler = {
   },
   useDownload() {
     return useMutation({
-      mutationFn: async ({id, fileName}: {id: Promise<{id: string}> | string, fileName: string}) => {
+      mutationFn: async ({id, fileName}: {id: Promise<string> | string, fileName: string}) => {
         if(typeof id === "object")
-          id = (await id).id;
+          id = await id;
 
         const response = await fetch("https://rtarticlesapi.azurewebsites.net/api/FileJobs/" + id, {
           method: "GET"
@@ -40,6 +40,10 @@ const JobAPIHandler = {
         link.click();
         window.URL.revokeObjectURL(link.href)
         document.body.removeChild(link);
+
+        await fetch(sasUrl, {
+          method: "DELETE"
+        });
       },
       onError: (error) => console.error("Error while downloading image: ", error.message),
       retryDelay: (count) => 5000 + count * 1000
@@ -47,4 +51,4 @@ const JobAPIHandler = {
   }
 };
 
-export default JobAPIHandler
+export default JobAPIHandler;
