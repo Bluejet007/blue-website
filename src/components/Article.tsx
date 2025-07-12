@@ -1,4 +1,4 @@
-import { GridProps } from "../types";
+import { GridProps } from "../data/types";
 
 function Article({centreDotHandler, dotSizeHandler, gridSizeHandler}: GridProps) {
   //Centre dot

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Article } from "../types";
+import { Article } from "../data/types";
 
 const staleTime = 1000 * 60 * 10; // 10 minutes
 
