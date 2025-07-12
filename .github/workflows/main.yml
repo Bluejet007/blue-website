@@ -11,6 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 23.4
+
+      - name: Install dependencies & build React app
+        run: npm install && npm run build
+
       - name: Log in with Azure
         uses: Azure/login@v2.3.0
         with:
