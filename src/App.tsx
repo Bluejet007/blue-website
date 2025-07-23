@@ -35,7 +35,7 @@ function App() {
       <div className="page-container">
       <NavMenu navData={navData}/>
       <Header />
-      <CrumbyRow path={["Test", "Here", "There"]}/>
+      {/* <CrumbyRow path={["Test", "Here", "There"]}/> */}
         <Routes>
           <Route path="/" element={<Home centreDotHandler={centreDotHandler} dotSizeHandler={dotSizeHandler} gridSizeHandler={gridSizeHandler}/>} />
           <Route path="articles" element={<ArticleGrid />} />

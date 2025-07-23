@@ -8,7 +8,7 @@ interface Props {
 function NavMenu({navData}: Props) {
   return (
   <nav className="nav-menu">
-    <img src="/webicon.svg" alt="" id="logo"/>
+    <img src="/tulip_logo.png" alt="" id="logo"/>
     <h3 className="nav-header">Navigation</h3>
     {navData.map((item, index) => (
       <NavItem label={item.name} link={item.path} key={index}/>
