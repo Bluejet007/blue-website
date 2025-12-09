@@ -1,3 +1,5 @@
+import "../styling/CrumbyRow.css"
+
 interface Props {
     path?: string[];
 }

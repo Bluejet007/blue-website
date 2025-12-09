@@ -34,7 +34,7 @@ function pointPatternGen() {
 	let layerHeight = gridSize * Math.sin(Math.PI / 3);
 
 	// Generate coordinates
-	for(let i: GLint = 0; i < 6; i++) {
+	for(let i: GLint = 0; i < 7; i++) {
 		coords.push({x: (i % 2 == 0 ? 2.25 : 0.75) * gridSize, y: i * layerHeight})
 	}
 

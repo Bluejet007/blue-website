@@ -3,14 +3,14 @@ import ArticleCard from './ArticleCard';
 import ArticleAPI from '../handlers/ArticleAPIHandler';
 
 function ArticleGrid() {  
-  const results = ArticleAPI.useArticles();
+  const articlesQuery = ArticleAPI.useArticles();
 
-  if(results.isLoading) return "Loading...";
-  if(results.error) return "Error: " + results.error.message;
+  if(articlesQuery.isLoading) return "Loading...";
+  if(articlesQuery.error) return "Error: " + articlesQuery.error.message;
 
   return (
     <div className="article-grid-container">
-      {results.data && results.data.map((article) => (
+      {articlesQuery.data && articlesQuery.data.map((article) => (
         <ArticleCard key={article.id} article={article} />
       ))}
     </div>

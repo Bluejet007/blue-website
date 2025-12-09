@@ -42,40 +42,7 @@ hr {
 
 .main-content {
   text-align: center;
-  font-size: xx-large;
-}
-
-.crumby-row {
-  margin: 20px auto;
-  font-size: 1.4em;
-
-    a {
-    font-size: 0.85em;
-
-    &::before, &::after {
-      content: " ";
-    }
-  }
-}
-
-.header {
-  --logo-offset: 2.5rem;
-  --top-pos: -1.2rem;
-
-  text-align: center;
-  padding-bottom: calc(var(--logo-offset) + var(--top-pos));
-
-  h2 {
-    margin: 0px;
-    margin-top: var(--top-pos);
-  }
-
-  #logo {
-    height: 3em;
-    position: relative;
-    margin: 0px 0.6em 0px 0.6em;
-    top: var(--logo-offset);
-  }
+  font-size: larger;
 }
 
 .bgCircle {

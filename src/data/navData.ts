@@ -4,6 +4,10 @@ export default [
         path: "/"
     },
     {
+        name: "Sample",
+        path: "article"
+    },
+    {
         name: "Articles",
         path: "articles"
     },
