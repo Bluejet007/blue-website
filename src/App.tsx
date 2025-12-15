@@ -1,6 +1,6 @@
 import './styling/MainStylesheet.css';
 import ArticleGrid from './components/ArticleGrid';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import Home from './Home';
 import Header from './components/Header';
 import NavMenu from './components/NavMenu';
@@ -10,7 +10,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import React from 'react';
 import FileUploader from './components/FileUploader';
 import navData from './data/navData';
-import Article from './components/articlePage/ArticleDiv';
+import Article from './components/articlePage/Article';
 import CrumbyRow from './components/CrumbyRow';
 
 const GridBG = React.lazy(() => import('./components/GridBG'));
@@ -34,14 +34,14 @@ function App() {
     <ReactQueryDevtools />
     <Router>
       <div className="page-container">
-      <NavMenu navData={navData}/>
-      <Header />
-      <CrumbyRow path={["Test", "Here", "There"]}/>
+        <NavMenu navData={navData}/>
+        <Header />
+        <CrumbyRow path={["Test", "Here", "There"]}/>
         <Routes>
           <Route path="/" element={<Home centreDotHandler={centreDotHandler} dotSizeHandler={dotSizeHandler} gridSizeHandler={gridSizeHandler}/>} />
-          <Route path="article" element={<Article />} />
-          <Route path="articles" element={<ArticleGrid />} />
-          <Route path="upload" element={<FileUploader />} />
+          <Route path="/a/:artID" element={<Article />} />
+          <Route path="/articles" element={<ArticleGrid />} />
+          <Route path="/upload" element={<FileUploader />} />
           {/* Add other routes as needed */}
         </Routes>
       </div>
