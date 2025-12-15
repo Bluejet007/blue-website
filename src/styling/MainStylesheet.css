@@ -29,8 +29,7 @@ h2 {
 }
 
 hr {
-  border-image: linear-gradient(to left, #FFF0 10%, #8F8F8F, #FFF0 90%) 1 0;
-  margin: 12.5px 0px;
+  border-image: linear-gradient(to left, #FFF0, #8F8F8F, #FFF0) 1 0;
 }
 
 .main-content, .crumby-row {

@@ -1,0 +1,15 @@
+.article-header {
+  text-align: center;
+
+  h1, h2 {
+    margin: 10px 0px;
+  }
+}
+
+.main-content {
+  text-align: justify;
+  text-align-last: center;
+  img {
+    text-align: center;
+  }
+}
