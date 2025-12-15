@@ -1,6 +1,6 @@
 import { GridProps } from "../data/types";
 
-function Article({centreDotHandler, dotSizeHandler, gridSizeHandler}: GridProps) {
+function Test({centreDotHandler, dotSizeHandler, gridSizeHandler}: GridProps) {
   //Centre dot
   const flipCentre = () => centreDotHandler[1](!centreDotHandler[0]);
 
@@ -17,10 +17,9 @@ function Article({centreDotHandler, dotSizeHandler, gridSizeHandler}: GridProps)
         <label htmlFor="buttn">Centre dot</label><br /><input type="checkbox" id="buttn" onChange={flipCentre} checked={centreDotHandler[0]}></input><br />
         <label htmlFor="dotSize">Dot size</label><br /><input type="range" id="dotSize" max="6" min="0.25" step="any" defaultValue={dotSizeHandler[0]} onChange={setDotSize}></input><br />
         <label htmlFor="latticeSize">Lattice size</label><br /><input type="range" id="latticeSize" max="100" min="2.5" step="any" defaultValue={gridSizeHandler[0]} onChange={setGridSize}></input>
-        <br />Stuff<br />Stuff<br />Stuff<br />Stuff
       </form>
     </div>
   );
 }
 
-export default Article;
+export default Test;

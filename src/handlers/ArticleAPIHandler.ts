@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Article } from "../data/types";
+import { ArticleProps } from "../data/types";
 
 const staleTime = 1000 * 60 * 10; // 10 minutes
 
@@ -7,7 +7,7 @@ const ArticleAPI = {
   useArticles() {
     return useQuery({
       queryKey: ['articles'],
-      queryFn: async (): Promise<Array<Article>> => {
+      queryFn: async (): Promise<Array<ArticleProps>> => {
         const response = await fetch(
           'https://rtarticlesapi.azurewebsites.net/api/Articles'
         );
@@ -16,10 +16,10 @@ const ArticleAPI = {
       staleTime: staleTime
     });
   },
-  useArticle(articleId: number) {
+  useArticle(articleId: string) {
     return useQuery({
       queryKey: ['article', articleId],
-      queryFn: async (): Promise<Array<Article>> => {
+      queryFn: async (): Promise<ArticleProps> => {
         const response = await fetch(
           `https://rtarticlesapi.azurewebsites.net/api/Articles/${articleId}`
         );

@@ -7,8 +7,8 @@ function FileUploader() {
   const [selectedJob, setSelectedJob] = useState<string>("0");
   const [params, setParams] = useState<number[]>([]);
 
-  const {mutate: upload, isPending: isUploading} = JobAPIHandler.useUpload();
-  const {mutate: download, isPending: isDownloading} = JobAPIHandler.useDownload();
+  const {mutate: uploadFile, isPending: isUploading} = JobAPIHandler.useUpload();
+  const {mutate: downloadFile, isPending: isDownloading} = JobAPIHandler.useDownload();
 
   function fileHandler(e: ChangeEvent<HTMLInputElement>) {
     if(e.target.files) {
@@ -53,10 +53,10 @@ function FileUploader() {
     if(jobTypes[Number.parseInt(selectedJob)].parameters)
       params.forEach((p) => formData.append("parameters", p.toString()));
 
-    upload(formData, {
+    uploadFile(formData, {
       onSuccess: (response) => {
         if(response.status == 200)
-          download({id: response.text(), fileName: file.name});
+          downloadFile({id: response.text(), fileName: file.name});
         else
           alert("Error");
       }

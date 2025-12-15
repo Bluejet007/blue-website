@@ -1,14 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Article } from '../data/types'; // Import the Article interface
+import { ArticleProps } from '../data/types'; // Import the Article interface
 
-interface ArticleCardProps {
-  article: Article;
-}
-
-function ArticleCard({ article }: ArticleCardProps) {
+function ArticleCard({ article }: { article: ArticleProps }) {
   return (
     <div className="article-card">
-      <Link to={article.link}>
+      <Link to={'/a/' + article.id}>
         <img src={article.imageUrl} alt={article.title} className="article-card-img" />
         <h3 className="article-card-title">{article.title}</h3>
         <p className="article-card-summary">{article.description}</p>

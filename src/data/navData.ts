@@ -4,11 +4,15 @@ export default [
         path: "/"
     },
     {
+        name: "Sample",
+        path: "/a/cc7282b3-aa98-40ff-b034-df3c2c071a99"
+    },
+    {
         name: "Articles",
-        path: "articles"
+        path: "/articles"
     },
     {
         name: "Upload",
-        path: "upload"
+        path: "/upload"
     }
 ];
