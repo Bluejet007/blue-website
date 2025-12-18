@@ -4,25 +4,31 @@ const JobAPIHandler = {
   useUpload() {
     return useMutation({
       mutationFn: async (formData: FormData) => {
-        return await fetch("https://rtarticlesapi.azurewebsites.net/api/FileJobs", {
-          method: "POST",
-          body: formData
-        });
+        return await fetch(
+          "https://rtarticlesapi.azurewebsites.net/api/FileJobs",
+          {
+            method: "POST",
+            body: formData
+          }
+        );
       },
       onError: (error) => console.error("Error while uploading image: ", error.message)
     })
   },
   useDownload() {
     return useMutation({
-      mutationFn: async ({id, fileName}: {id: Promise<string> | string, fileName: string}) => {
-        if(typeof id === "object")
+      mutationFn: async ({ id, fileName }: { id: Promise<string> | string, fileName: string }) => {
+        if (typeof id === "object")
           id = await id;
 
-        const response = await fetch("https://rtarticlesapi.azurewebsites.net/api/FileJobs/" + id, {
-          method: "GET"
-        });
+        const response = await fetch(
+          `https://rtarticlesapi.azurewebsites.net/api/FileJobs/${id}`,
+          {
+            method: "GET"
+          }
+        );
 
-        if(response.status != 200)
+        if (response.status != 200)
           throw new Error(response.status.toString());
         else
           return { response, fileName };
