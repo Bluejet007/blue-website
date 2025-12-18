@@ -1,0 +1,93 @@
+.settings-button-active {
+  position: absolute;
+  right: 0px;
+  top: -39px;
+  text-align: center;
+  text-decoration: none;
+  font-size: medium;
+  padding: 10px 20px;
+  border-radius: 20px 20px 0px 20px;
+  border: none;
+  background-color: whitesmoke;
+  transition: all 0.75s ease-out;
+
+  &::after {
+    font-size: 40px;
+    content: '×';
+    position: absolute;
+    top: -20%;
+    left: 28%;
+  }
+
+  &:hover {
+  border-radius: 20px 20px 0px 0px;
+    background-color: #d2a0f0;
+  }
+}
+
+.settings-box {
+  font-size: small;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 9.7rem;
+}
+
+.settings-menu {
+  padding: 10px 5px;
+  border-radius: 20px 0px 20px 20px;
+  background-color: whitesmoke;
+  border-top: solid 3px #d2a0f0;
+  overflow-x: hidden;
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: none;
+
+    &::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg in srgb-linear, #1DC0FF, #FF659C);
+    }
+    &::-moz-range-track {
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg in srgb-linear, #1DC0FF, #FF659C);
+    }
+    &::-ms-track {
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg in srgb-linear, #1DC0FF, #FF659C);
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 15px;
+      height: 15px;
+      margin-top: -6.5px;
+      border: #c1c1c1 solid 0.8px;
+      border-radius: 1px;
+      rotate: 45deg;
+      background: whitesmoke;
+    }
+    &::-moz-range-thumb {
+      border-radius: 1px;
+      rotate: 45deg;
+      background: linear-gradient(135deg, #FFF0 42%, whitesmoke 43%, whitesmoke 58%, #FFF0 59%);
+    }
+    &::-ms-thumb {
+      border-radius: 1px;
+      rotate: 45deg;
+      background: linear-gradient(135deg, #FFF0 42%, whitesmoke 43%, whitesmoke 58%, #FFF0 59%);
+    }
+  }
+
+  input[type="checkbox"] {
+    translate: 0px 0.1em;
+    height: 1.2em;
+    width: 1.2em;
+  }
+}

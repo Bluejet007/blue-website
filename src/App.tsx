@@ -12,6 +12,7 @@ import FileUploader from './components/FileUploader';
 import navData from './data/navData';
 import Article from './components/articlePage/Article';
 import CrumbyRow from './components/CrumbyRow';
+import SettingsBox from './components/SettingsBox';
 
 const GridBG = React.lazy(() => import('./components/GridBG'));
 
@@ -37,8 +38,9 @@ function App() {
         <NavMenu navData={navData}/>
         <Header />
         <CrumbyRow />
+        <SettingsBox centreDotHandler={centreDotHandler} dotSizeHandler={dotSizeHandler} gridSizeHandler={gridSizeHandler}/>
         <Routes>
-          <Route path="/" element={<Home centreDotHandler={centreDotHandler} dotSizeHandler={dotSizeHandler} gridSizeHandler={gridSizeHandler}/>} />
+          <Route path="/" element={<Home />} />
           <Route path="/a/:artID" element={<Article />} />
           <Route path="/articles" element={<ArticleGrid />} />
           <Route path="/upload" element={<FileUploader />} />

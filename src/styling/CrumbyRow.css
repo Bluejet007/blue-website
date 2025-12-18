@@ -1,5 +1,8 @@
 .crumby-row {
   margin-top: 10px;
+  top: -2px;
+  position: sticky;
+  background-color: white;
 
   a {
     font-size: 0.85em;
