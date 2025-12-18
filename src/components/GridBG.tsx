@@ -17,7 +17,7 @@ function GridBG(props: Props) {
     
 
     return (
-    <svg id="background" style={{height: document.body.scrollHeight}}>
+    <svg id="background" style={{height: document.body.scrollHeight + 10}}>
         <defs>
             {pointPatternGen()}
         </defs>

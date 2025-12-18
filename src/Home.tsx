@@ -1,8 +1,7 @@
-import Test from "./components/Test";
-import { GridProps } from "./data/types";
-
-function App(gridParams: GridProps) {
-  return <Test centreDotHandler={gridParams.centreDotHandler} dotSizeHandler={gridParams.dotSizeHandler} gridSizeHandler={gridParams.gridSizeHandler}/>;
+function App() {
+  return <div className="main-content">
+      <h2>From old roots<br />To new heights, to new horizons, to new skies<br />Spring new leaves</h2>
+    </div>;
 }
 
 export default App;

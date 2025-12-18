@@ -1,6 +1,8 @@
 import { ChangeEvent, useState } from "react";
 import JobAPIHandler from "../handlers/JobAPIHandler";
 import jobTypes, { JobParameter } from "../data/jobTypes";
+import SampleDisplay from "./SampleDisplay";
+import '../styling/FileUploader.css';
 
 function FileUploader() {
   const [file, setFile] = useState<File | null>(null);
@@ -65,28 +67,32 @@ function FileUploader() {
 
   return (
   <div className="main-content">
-    <input type="file" onChange={fileHandler}/>
-    <select onChange={jobTypeHandler}>
-      {jobTypes.map((job, i) => (
-        <option value={i} key={i}>{job.name}</option>
+    <div className="file-uploader">
+      <input type="file" onChange={fileHandler}/>
+      <select onChange={jobTypeHandler}>
+        {jobTypes.map((job, i) => (
+          <option value={i} key={i}>{job.name}</option>
+        ))}
+      </select>
+
+      {jobTypes[Number.parseInt(selectedJob)].parameters?.map((param, k) => (
+        <div key={k}>
+          <label htmlFor={param.name}>{param.name + ": "}</label>
+          <input name={param.name} type={param.dataType} min={param.range[0]} max={param.range[1]} defaultValue={param.range[0]} onChange={(e) => parameterHandler(k, e.target.value)}></input>
+        </div>
       ))}
-    </select>
 
-    {jobTypes[Number.parseInt(selectedJob)].parameters?.map((param, k) => (
-      <div key={k}>
-        <label htmlFor={param.name}>{param.name + ": "}</label>
-        <input name={param.name} type={param.dataType} min={param.range[0]} max={param.range[1]} defaultValue={param.range[0]} onChange={(e) => parameterHandler(k, e.target.value)}></input>
-      </div>
-    ))}
+      {file && 
+        <div>
+          <p>File name: {file.name}</p>
+          <p>Size: {(file.size / 1024).toFixed(2)} KB</p>
+          <p>Type: {file.type}</p>
+          {isUploading ? <p>Uploading...</p> : isDownloading ? <p>Downloading...</p> : <button onClick={uploadHandler}>Upload</button>}
+        </div>
+      }
+    </div>
 
-    {file && 
-      <div>
-        <p>File name: {file.name}</p>
-        <p>Size: {(file.size / 1024).toFixed(2)} KB</p>
-        <p>Type: {file.type}</p>
-        {isUploading ? <p>Uploading...</p> : isDownloading ? <p>Downloading...</p> : <button onClick={uploadHandler}>Upload</button>}
-      </div>
-    }
+    <SampleDisplay jobInd={Number.parseInt(selectedJob)}/>
   </div>
   );
 };

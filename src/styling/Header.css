@@ -3,8 +3,6 @@
 
   text-align: center;
   padding-bottom: calc(var(--logo-offset));
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
   border-image: linear-gradient(to left, #0000 15%, #CFCFCF 40%, #CFCFCF 60%, #0000 85%) 50;
 
   h2 {

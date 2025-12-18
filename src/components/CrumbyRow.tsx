@@ -4,20 +4,18 @@ import "../styling/CrumbyRow.css"
 function CrumbyRow() {
   let location = useLocation();
   let path = location.pathname.split('/').slice(1);
-  console.log(path);
 
-  if (path.length == 0 || path[0] == '') {
-    return <hr />;
-  }
-  else {
-    return (
-      <>
+  return (
+    <>
+      <div className="crumby-row">
         <hr />
-        <div className="crumby-row">{path.map((step, ind) => <span key={ind}>/<a>{step}</a></span>)}</div>
-        <hr />
-      </>
-    );
-  }
+        {!(path.length == 0 || path[0] == '') &&
+          <>{path.map((step, ind) => <span key={ind}>/<a>{step}</a></span>)}
+          <hr /></>
+        }
+      </div>
+    </>
+  );
 }
 
 export default CrumbyRow;

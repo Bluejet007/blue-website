@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import ArticleAPI from "../../handlers/ArticleAPIHandler";
 import DOMPurify from "dompurify";
+import "../../styling/ArticleContent.css"
 
 // const sample = {
 //   id: 'test',
