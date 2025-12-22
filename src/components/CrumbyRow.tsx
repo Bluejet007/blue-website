@@ -1,4 +1,4 @@
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 import "../styling/CrumbyRow.css"
 
 function CrumbyRow() {
@@ -8,10 +8,9 @@ function CrumbyRow() {
   return (
     <>
       <div className="crumby-row">
-        <hr />
         {!(path.length == 0 || path[0] == '') &&
-          <>{path.map((step, ind) => <span key={ind}>/<a>{step}</a></span>)}
-          <hr /></>
+          <><Link to={'/'}><img className= 'inline-img' src='/tulip_logo_squ.png' /></Link>
+          {path.map((step, ind) => <><span key={ind} className='crumb'><Link to={path.slice(0, ind + 1).join('/')}>{step}</Link></span><span className='crumby-space'></span></>)}</>
         }
       </div>
     </>

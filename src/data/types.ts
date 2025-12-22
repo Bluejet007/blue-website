@@ -4,7 +4,7 @@ export interface ArticleProps {
   date: string;
   authors?: string[];
   description: string;
-  imageUrl?: string;
+  'image-url'?: string;
   link: string; // Relative path
   content?: string; // Full article page content
 };

@@ -41,7 +41,7 @@ function App() {
         <SettingsBox centreDotHandler={centreDotHandler} dotSizeHandler={dotSizeHandler} gridSizeHandler={gridSizeHandler}/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/a/:artID" element={<Article />} />
+          <Route path="/articles/:artID" element={<Article />} />
           <Route path="/articles" element={<ArticleGrid />} />
           <Route path="/upload" element={<FileUploader />} />
           {/* Add other routes as needed */}
