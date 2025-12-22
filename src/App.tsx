@@ -49,7 +49,9 @@ function App() {
       </div>
     </Router>
     <Suspense>
-      <GridBG isCentre={centreDotHandler[0]} dotSize={dotSizeHandler[0]} gridSize={gridSizeHandler[0]}/>
+      <GridBG isCentre={centreDotHandler[0]} dotSize={dotSizeHandler[0]} gridSize={gridSizeHandler[0]} patternInd={0} id={0}/>
+      <GridBG isCentre={centreDotHandler[0]} dotSize={dotSizeHandler[0]} gridSize={gridSizeHandler[0]} patternInd={1} id={1}/>
+      <GridBG isCentre={centreDotHandler[0]} dotSize={dotSizeHandler[0]} gridSize={gridSizeHandler[0]} patternInd={1} id={2}/>
     </Suspense>
   </QueryClientProvider>
   );

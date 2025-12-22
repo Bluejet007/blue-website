@@ -13,17 +13,6 @@ body {
   background-size: 25px;
 }
 
-#background {
-	z-index: -100;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  width: 100%;
-	position: absolute;
-	background-color: #FFF;
-}
-
 h2 {
   font-size: 2em;
 }
@@ -44,7 +33,7 @@ hr {
   font-size: larger;
 }
 
-.bgCircle {
+.bgShow {
 	fill: #C0C0C0;
 }
 
