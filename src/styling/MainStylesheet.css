@@ -17,10 +17,6 @@ h2 {
   font-size: 2em;
 }
 
-hr {
-  border-image: linear-gradient(to left, #FFF0, #8F8F8F, #FFF0) 1 0;
-}
-
 .main-content, .crumby-row {
   min-width: 36rem;
   max-width: 72rem;
@@ -28,9 +24,10 @@ hr {
   margin-right: auto;
 }
 
-.main-content {
-  text-align: center;
-  font-size: larger;
+.inline-img {
+  height: 1.2em;
+  vertical-align: text-bottom;
+  display: inline;
 }
 
 .bgShow {
