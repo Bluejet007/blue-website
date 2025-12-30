@@ -13,23 +13,8 @@ body {
   background-size: 25px;
 }
 
-#background {
-	z-index: -100;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  width: 100%;
-	position: absolute;
-	background-color: #FFF;
-}
-
 h2 {
   font-size: 2em;
-}
-
-hr {
-  border-image: linear-gradient(to left, #FFF0, #8F8F8F, #FFF0) 1 0;
 }
 
 .main-content, .crumby-row {
@@ -39,12 +24,13 @@ hr {
   margin-right: auto;
 }
 
-.main-content {
-  text-align: center;
-  font-size: larger;
+.inline-img {
+  height: 1.2em;
+  vertical-align: text-bottom;
+  display: inline;
 }
 
-.bgCircle {
+.bgShow {
 	fill: #C0C0C0;
 }
 

@@ -2,6 +2,9 @@
   position: absolute;
   right: 0px;
   top: -39px;
+  height: 39px;
+  left: 0px;
+  z-index: -1;
   text-align: center;
   text-decoration: none;
   font-size: medium;
@@ -9,18 +12,45 @@
   border-radius: 20px 20px 0px 20px;
   border: none;
   background-color: whitesmoke;
-  transition: all 0.75s ease-out;
+  transition: all 0.66s ease-out;
 
   &::after {
     font-size: 40px;
     content: '×';
     position: absolute;
-    top: -20%;
-    left: 28%;
+    top: -14%;
+    left: 43%;
   }
 
   &:hover {
+    height: 59px;
+    border-radius: 20px 20px 0px 0px;
+    background-color: #d2a0f0;
+  }
+}
+
+.settings-button-inactive {
+  position: absolute;
+  right: 0px;
+  top: -39px;
+  text-align: center;
+  text-decoration: none;
+  font-size: medium;
+  padding: 10px 20px;
   border-radius: 20px 20px 0px 0px;
+  border: none;
+  background-color: whitesmoke;
+  transition: all 0.66s ease-out;
+
+  &::after {
+    font-size: 40px;
+    content: '⚙';
+    position: absolute;
+    top: -19%;
+    left: 11%;
+  }
+
+  &:hover {
     background-color: #d2a0f0;
   }
 }
@@ -29,8 +59,9 @@
   font-size: small;
   position: fixed;
   right: 10px;
-  bottom: 10px;
+  bottom: 0px;
   width: 9.7rem;
+  transition: all 0.33s ease-out;
 }
 
 .settings-menu {
@@ -40,7 +71,7 @@
   border-top: solid 3px #d2a0f0;
   overflow-x: hidden;
 
-  input[type="range"] {
+  input[type='range'] {
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
@@ -85,7 +116,7 @@
     }
   }
 
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     translate: 0px 0.1em;
     height: 1.2em;
     width: 1.2em;

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import Home from './Home';
 import Header from './components/Header';
 import NavMenu from './components/NavMenu';
-import { Suspense, useState } from 'react';
+import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import React from 'react';
@@ -41,16 +41,16 @@ function App() {
         <SettingsBox centreDotHandler={centreDotHandler} dotSizeHandler={dotSizeHandler} gridSizeHandler={gridSizeHandler}/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/a/:artID" element={<Article />} />
+          <Route path="/articles/:artRawTitle" element={<Article />} />
           <Route path="/articles" element={<ArticleGrid />} />
           <Route path="/upload" element={<FileUploader />} />
           {/* Add other routes as needed */}
         </Routes>
       </div>
     </Router>
-    <Suspense>
-      <GridBG isCentre={centreDotHandler[0]} dotSize={dotSizeHandler[0]} gridSize={gridSizeHandler[0]}/>
-    </Suspense>
+    <GridBG isCentre={centreDotHandler[0]} dotSize={dotSizeHandler[0]} gridSize={gridSizeHandler[0]} patternInd={0} id={0}/>
+    <GridBG isCentre={centreDotHandler[0]} dotSize={dotSizeHandler[0]} gridSize={gridSizeHandler[0]} patternInd={1} id={1}/>
+    <GridBG isCentre={centreDotHandler[0]} dotSize={dotSizeHandler[0]} gridSize={gridSizeHandler[0]} patternInd={1} id={2}/>
   </QueryClientProvider>
   );
 }

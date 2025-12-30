@@ -1,0 +1,35 @@
+#background-0 {
+  z-index: -100;
+  left: 0px;
+  right: 9em;
+  top: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 86rem;
+  position: fixed;
+  background-color: #FFF;
+}
+
+#background-1 {
+  z-index: -101;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: #FFF;
+}
+
+#background-2 {
+  z-index: -99;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 9em;
+  position: fixed;
+  background-color: #FFF;
+}
