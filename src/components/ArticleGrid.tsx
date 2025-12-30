@@ -10,9 +10,7 @@ function ArticleGrid() {
 
   return (
     <div className='article-grid-container'>
-      {articlesQuery.data && articlesQuery.data.map((article) => (
-        <ArticleCard key={article.id} article={article} />
-      ))}
+      {articlesQuery.data && articlesQuery.data.map(article => <ArticleCard key={article.id} article={article} />)}
     </div>
   );
 }

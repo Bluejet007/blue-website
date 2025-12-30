@@ -1,18 +1,18 @@
 export default [
     {
-        name: "Home",
-        path: "/"
+        name: 'Home',
+        path: '/'
     },
     {
-        name: "Sample",
-        path: "/articles/first-article"
+        name: 'Sample',
+        path: '/articles/first-article'
     },
     {
-        name: "Articles",
-        path: "/articles"
+        name: 'Articles',
+        path: '/articles'
     },
     {
-        name: "Upload",
-        path: "/upload"
+        name: 'Upload',
+        path: '/upload'
     }
 ];

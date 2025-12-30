@@ -63,11 +63,19 @@ const patterns = [
       endPoints.push({x: x2, y: y2});
     }
 
-    return <>
-      {endPoints.map((item, index) =>
-        (<line stroke={!isCentre && i % 3 == 0 ? '' : '#A0A0A0'} className={i % 3 != 0 || isCentre ? 'bgShow' : 'bgHidden'} x1={x} y1={y} x2={item.x} y2={item.y} key={i * 3 + index} />)
-      )}
-    </>;
+    return (
+      <>
+        {endPoints.map((item, index) =>
+          <line
+            stroke={!isCentre && i % 3 == 0 ? '' : '#A0A0A0'}
+            className={i % 3 != 0 || isCentre ? 'bgShow' : 'bgHidden'}
+            x1={x} y1={y}
+            x2={item.x} y2={item.y}
+            key={i * 3 + index}
+          />
+        )}
+      </>
+    );
   }
 ];
 

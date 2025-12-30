@@ -1,7 +1,7 @@
-import { useParams } from "react-router";
-import ArticleAPI from "../../handlers/ArticleAPIHandler";
-import DOMPurify from "dompurify";
-import "../../styling/ArticleContent.css";
+import { useParams } from 'react-router';
+import ArticleAPI from '../../handlers/ArticleAPIHandler';
+import DOMPurify from 'dompurify';
+import '../../styling/ArticleContent.css';
 
 // const sample = {
 //   id: 'test',
@@ -23,25 +23,27 @@ function Article() {
   let artBody = <></>;
 
   if (!article.isFetched) {
-    artHeader = <div className="article-header">
+    artHeader = <div className='article-header'>
       <h1>Loading...</h1>
     </div>
   }
   else {
     const artContent = artData.content ? DOMPurify.sanitize(artData.content) : 'Loading failed.';
 
-    artHeader = <div className="article-header" style={{backgroundImage: `linear-gradient(to bottom, transparent 33%, black), url("../${artData.imageUrl}")`}}>
+    artHeader = <div className='article-header' style={{backgroundImage: `linear-gradient(to bottom, transparent 33%, black), url('../${artData.imageUrl}')`}}>
         <h1>{artData.title}</h1>
         <h2>{(artData.authors ? 'By ' + artData.authors.join(', ') + ' - ' : '') + artData.date}</h2>
       </div>;
 
-    artBody = <div className="main-content" dangerouslySetInnerHTML={{__html: artContent}}></div>;
+    artBody = <div className='main-content' dangerouslySetInnerHTML={{__html: artContent}}></div>;
   }
 
-  return <>
-    {artHeader}
-    {artBody}
-  </>
+  return (
+    <>
+      {artHeader}
+      {artBody}
+    </>
+  );
 }
 
 export default Article;
