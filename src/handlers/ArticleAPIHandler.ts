@@ -16,12 +16,12 @@ const ArticleAPI = {
       staleTime: staleTime
     });
   },
-  useArticle(articleId: string) {
+  useArticle(articleRawTitle: string) {
     return useQuery({
-      queryKey: ['article', articleId],
+      queryKey: ['article', articleRawTitle],
       queryFn: async (): Promise<ArticleProps> => {
         const response = await fetch(
-          `https://rtarticlesapi.azurewebsites.net/api/Articles/${articleId}`
+          `https://rtarticlesapi.azurewebsites.net/api/Articles/${articleRawTitle}`,
         );
         return await response.json();
       },
