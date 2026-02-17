@@ -17,11 +17,30 @@ h2 {
   font-size: 2em;
 }
 
-.main-content, .crumby-row {
+.app-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.layout-spacer {
+  /* MUST match the width of your NavMenu */
+  min-width: 8em; 
+  width: 8em;
+  flex-shrink: 0; /* Prevents it from squishing */
+}
+
+.page-container {
   min-width: 36rem;
   max-width: 72rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-grow: 1;
 }
 
 .inline-img {
@@ -87,4 +106,10 @@ input[type="checkbox"] {
   margin: 0px;
   height: 25px;
   width: 25px;
+}
+
+@media(max-width: 1000px) {
+  .layout-spacer {
+    display: none;
+  }
 }

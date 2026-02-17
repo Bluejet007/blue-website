@@ -34,18 +34,21 @@ function App() {
   <QueryClientProvider client={queryClient}>
     <ReactQueryDevtools />
     <Router>
-      <div className="page-container">
+      <div className='app-layout'>
         <NavMenu navData={navData}/>
-        <Header />
-        <CrumbyRow />
         <SettingsBox centreDotHandler={centreDotHandler} dotSizeHandler={dotSizeHandler} gridSizeHandler={gridSizeHandler}/>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/articles/:artRawTitle" element={<Article />} />
-          <Route path="/articles" element={<ArticleGrid />} />
-          <Route path="/upload" element={<FileUploader />} />
-          {/* Add other routes as needed */}
-        </Routes>
+        <div className="page-container">
+          <Header />
+          <CrumbyRow />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/articles/:artRawTitle" element={<Article />} />
+            <Route path="/articles" element={<ArticleGrid />} />
+            <Route path="/upload" element={<FileUploader />} />
+            {/* Add other routes as needed */}
+          </Routes>
+        </div>
+        <div className='layout-spacer' aria-hidden='true' />
       </div>
     </Router>
     <GridBG isCentre={centreDotHandler[0]} dotSize={dotSizeHandler[0]} gridSize={gridSizeHandler[0]} patternInd={0} id={0}/>
