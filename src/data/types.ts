@@ -6,6 +6,6 @@ export interface ArticleProps {
   authors?: string[],
   description: string,
   imageUrl?: string,
-  link: string, // Relative path
-  content?: string // Full article page content
+  content?: string, // Full article page content
+  isNotArticle?: boolean
 };

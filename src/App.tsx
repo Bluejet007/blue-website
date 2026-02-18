@@ -37,14 +37,14 @@ function App() {
       <div className='app-layout'>
         <NavMenu navData={navData}/>
         <SettingsBox centreDotHandler={centreDotHandler} dotSizeHandler={dotSizeHandler} gridSizeHandler={gridSizeHandler}/>
-        <div className="page-container">
+        <div className='page-container'>
           <Header />
           <CrumbyRow />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/articles/:artRawTitle" element={<Article />} />
-            <Route path="/articles" element={<ArticleGrid />} />
-            <Route path="/upload" element={<FileUploader />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/articles/:artRawTitle' element={<Article />} />
+            <Route path='/articles' element={<ArticleGrid />} />
+            <Route path='/upload' element={<FileUploader />} />
             {/* Add other routes as needed */}
           </Routes>
         </div>

@@ -21,7 +21,6 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
   min-height: 100vh;
   width: 100%;
 }
@@ -35,12 +34,16 @@ h2 {
 
 .page-container {
   min-width: 36rem;
-  max-width: 72rem;
   margin: 0 auto;
   display: flex;
+  align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
   flex-grow: 1;
+}
+
+.header, .main-content {
+  max-width: 72em;
 }
 
 .inline-img {
